@@ -42,6 +42,11 @@ namespace Knapsack
                     result.valueSum += item.value;
                     result.weightSum += item.weight;
                     result.listID.Add(item.ID);
+
+                    if(result.weightSum == capacity)
+                    {
+                        break;
+                    }
                 }
             }
             return result;
