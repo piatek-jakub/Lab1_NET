@@ -9,7 +9,7 @@ namespace Knapsack
     internal class Problem
     {
         public int n;
-        List<Item> items;
+        public List<Item> items;
         Problem()
         {
             items = new List<Item>();
@@ -19,10 +19,10 @@ namespace Knapsack
         {
             this.n = n;
             items = new List<Item>();
-            for(int i  = 0; i < n; i++)
+            Random random = new Random(seed);
+            for (int i  = 0; i < n; i++)
             {
-                Random random = new Random(seed);
-                items.Add(new Item(random.Next(10), random.Next(10)));
+                items.Add(new Item(random.Next(1,10), random.Next(1,10)));
             }
         }
     }
