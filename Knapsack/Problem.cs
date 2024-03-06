@@ -31,9 +31,18 @@ namespace Knapsack
         {
             Result result = new Result();
             items.Sort(compareItems);
-            foreach (var item in items)
+            foreach(var item in items)
             {
                 Console.WriteLine("ID:" + item.ID + " value:" + item.value + " weight: " + item.weight + " ratio: " + item.ratio);
+            }
+            foreach (var item in items) 
+            {
+                if(result.weightSum + item.weight <= capacity)
+                {
+                    result.valueSum += item.value;
+                    result.weightSum += item.weight;
+                    result.listID.Add(item.ID);
+                }
             }
             return result;
         }
@@ -45,8 +54,8 @@ namespace Knapsack
             else return 1;
         }
         /*public override string ToString()
-{
+        {
 
-}*/
+        }*/
     }
 }
