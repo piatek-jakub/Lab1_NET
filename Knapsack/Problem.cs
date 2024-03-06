@@ -58,9 +58,14 @@ namespace Knapsack
             else if(x.ratio > y.ratio) return -1;
             else return 1;
         }
-        /*public override string ToString()
+        public override string ToString()
         {
-
-        }*/
+            string str = "";
+            foreach (var item in items)
+            {
+                str += "no.: " + item.ID + " value: " + item.value + " weight: " + item.weight + " ratio: " + item.ratio + "\n";
+            }
+            return str;
+        }
     }
 }
