@@ -10,10 +10,12 @@ namespace Knapsack
     {
         public int value;
         public int weight;
-        public Item(int value, int weight)
+        public int ID;
+        public Item(int value, int weight, int ID)
         {
             this.value = value;
             this.weight = weight;
+            this.ID = ID;
         }
     }
 
