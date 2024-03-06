@@ -22,8 +22,13 @@ namespace Knapsack
             Random random = new Random(seed);
             for (int i  = 0; i < n; i++)
             {
-                items.Add(new Item(random.Next(1,10), random.Next(1,10)));
+                Item item = new Item(random.Next(1, 10), random.Next(1, 10));
+                items.Add(item);
             }
         }
+        /*public override string ToString()
+        {
+
+        }*/
     }
 }
