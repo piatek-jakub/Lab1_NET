@@ -30,12 +30,23 @@ namespace Knapsack
         public Result Solve(int capacity) 
         {
             Result result = new Result();
-            items.Sort();
+            items.Sort(compareItems);
+            foreach (var item in items)
+            {
+                Console.WriteLine("ID:" + item.ID + " value:" + item.value + " weight: " + item.weight + " ratio: " + item.ratio);
+            }
             return result;
         }
-        /*public override string ToString()
-        {
 
-        }*/
+        public int compareItems(Item x, Item y)
+        {
+            if(x.ratio == y.ratio) return 0;
+            else if(x.ratio > y.ratio) return -1;
+            else return 1;
+        }
+        /*public override string ToString()
+{
+
+}*/
     }
 }
