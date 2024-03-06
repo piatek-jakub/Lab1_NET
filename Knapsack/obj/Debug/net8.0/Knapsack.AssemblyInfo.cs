@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Knapsack")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+487c3343fe45e2e66478135232ed269491bcd2ba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a21863a50db58250ffd98b4ed602afe046855ac3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Knapsack")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Knapsack")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
