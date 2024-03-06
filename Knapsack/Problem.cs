@@ -18,7 +18,8 @@ namespace Knapsack
         public Problem(int n, int seed)
         {
             this.n = n;
-            items = new List<Item>();
+            this.items = new List<Item>();
+
             Random random = new Random(seed);
             for (int i  = 0; i < n; i++)
             {
@@ -29,7 +30,7 @@ namespace Knapsack
         public Result Solve(int capacity) 
         {
             Result result = new Result();
-            //do something
+            items.Sort();
             return result;
         }
         /*public override string ToString()
