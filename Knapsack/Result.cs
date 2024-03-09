@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("MSTest_Knapsack")]
+[assembly: InternalsVisibleTo("MSTest_Knapsack"), InternalsVisibleTo("WinFormsKnapsack")]
 namespace Knapsack
 {
     internal class Result

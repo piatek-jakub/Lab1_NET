@@ -19,6 +19,15 @@ namespace Knapsack
             this.ID = ID;
             this.ratio = (float)value / (float)weight;
         }
+
+        public bool IsItemValid()
+        {
+            if(value > 0 && weight > 0)
+            {
+                return true;
+            }
+           return false;
+        }
     }
 
 }

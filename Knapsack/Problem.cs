@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("MSTest_Knapsack")]
+[assembly: InternalsVisibleTo("MSTest_Knapsack"), InternalsVisibleTo("WinFormsKnapsack")]
 namespace Knapsack
 {
     internal class Problem
@@ -49,7 +49,7 @@ namespace Knapsack
             }*/
             foreach (var item in items) 
             {
-                if(result.weightSum + item.weight <= capacity)
+                if(result.weightSum + item.weight <= capacity && item.IsItemValid())
                 {
                     result.valueSum += item.value;
                     result.weightSum += item.weight;

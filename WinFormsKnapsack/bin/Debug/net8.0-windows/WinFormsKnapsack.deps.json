@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "WinFormsKnapsack/1.0.0": {
+        "dependencies": {
+          "Knapsack": "1.0.0"
+        },
+        "runtime": {
+          "WinFormsKnapsack.dll": {}
+        }
+      },
+      "Knapsack/1.0.0": {
+        "runtime": {
+          "Knapsack.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WinFormsKnapsack/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Knapsack/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

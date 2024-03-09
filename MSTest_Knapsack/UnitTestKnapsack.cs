@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace MSTest_Knapsack
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTestKnapsack
     {
         [TestMethod]
         public void TestMethodIsAtleastOneElement()
@@ -21,7 +21,7 @@ namespace MSTest_Knapsack
             Result result = problem.Solve(capacity);
 
             Assert.IsTrue(result.listID.Count >= 1);
-            Assert.IsTrue(!result.listID.Contains(7));
+            Assert.IsFalse(result.listID.Contains(7));
         }
         [TestMethod]
         public void TestMethodNoElementsInBackpack()
@@ -85,6 +85,50 @@ namespace MSTest_Knapsack
             Result result = problem.Solve(capacity);
 
             Assert.IsTrue(result.valueSum == 45);
+        }
+
+        [TestMethod]
+        public void TestMethodItemsValidity()
+        {
+            Problem problem = new Problem();
+            int capacity = 20;
+            List<Item> items = new List<Item>();
+            items.Add(new Item(-7, 6, 0));
+            items.Add(new Item(7, 6, 1));
+            items.Add(new Item(7, -6, 2));
+            items.Add(new Item(-7, -6, 3));
+            items.Add(new Item(0, 7, 4));
+            items.Add(new Item(7, 0, 5));
+
+            problem.AddItemsManually(items);
+
+
+            Result result = problem.Solve(capacity);
+            Debug.WriteLine(problem);
+            Assert.IsTrue(result.valueSum == 7);
+            Assert.IsTrue(result.weightSum == 6);
+            Assert.IsFalse(result.listID.Contains(0));
+            Assert.IsFalse(result.listID.Contains(2));
+            Assert.IsFalse(result.listID.Contains(3));
+            Assert.IsFalse(result.listID.Contains(4));
+            Assert.IsFalse(result.listID.Contains(5));
+        }
+        [TestMethod]
+        public void TestMethod()
+        {
+            int capacity = 10;
+            Problem problem = new Problem();
+            List<Item> items = new List<Item>();
+            items.Add(new Item(7, 4, 0));
+            items.Add(new Item(7, 7, 1));
+            items.Add(new Item(7, 3, 2));
+
+            problem.AddItemsManually(items);
+
+            Result result = problem.Solve(capacity);
+
+            Assert.IsTrue(result.listID.Count >= 1);
+            Assert.IsTrue(!result.listID.Contains(7));
         }
     }
 }
