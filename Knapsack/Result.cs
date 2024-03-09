@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("MSTest_Knapsack")]
 namespace Knapsack
 {
     internal class Result
@@ -24,7 +26,7 @@ namespace Knapsack
             str += "items: ";
             foreach(var id in this.listID)
             {
-                str+= id.ToString() + " ";
+                str+= id + " ";
             }
             str += "\n";
 

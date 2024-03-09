@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
+[assembly: InternalsVisibleTo("MSTest_Knapsack")]
 namespace Knapsack
 {
     internal class Problem
     {
         public int n;
         public List<Item> items;
-        Problem()
+        public Problem()
         {
             items = new List<Item>();
             n = 0;
@@ -23,10 +25,20 @@ namespace Knapsack
             Random random = new Random(seed);
             for (int i  = 0; i < n; i++)
             {
-                Item item = new Item(random.Next(1, 10), random.Next(1, 10), i);
+                Item item = new Item(random.Next(1, 11), random.Next(1, 11), i);
                 items.Add(item);
             }
         }
+
+        public void AddItemsManually(List<Item> items) 
+        {
+            foreach(Item item in items)
+            {
+                this.items.Add(item);
+            }
+            n = items.Count;
+        }
+
         public Result Solve(int capacity) 
         {
             Result result = new Result();
@@ -58,6 +70,7 @@ namespace Knapsack
             else if(x.ratio > y.ratio) return -1;
             else return 1;
         }
+
         public override string ToString()
         {
             string str = "";
