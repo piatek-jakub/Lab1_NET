@@ -76,7 +76,7 @@ namespace Knapsack
             string str = "";
             foreach (var item in items)
             {
-                str += "no.: " + item.ID + " value: " + item.value + " weight: " + item.weight + " ratio: " + item.ratio + "\n";
+                str += "no.: " + item.ID + " value: " + item.value + " weight: " + item.weight + " ratio: " + item.ratio + Environment.NewLine;
             }
             return str;
         }

@@ -1,4 +1,6 @@
 ﻿
+using Knapsack;
+
 namespace WinFormsKnapsack
 {
     partial class Knapsack
@@ -75,7 +77,6 @@ namespace WinFormsKnapsack
             results.Name = "results";
             results.Size = new Size(234, 299);
             results.TabIndex = 3;
-            results.TextChanged += results_TextChanged;
             // 
             // instance
             // 
@@ -84,7 +85,6 @@ namespace WinFormsKnapsack
             instance.Name = "instance";
             instance.Size = new Size(275, 499);
             instance.TabIndex = 4;
-            instance.TextChanged += instance_TextChanged;
             // 
             // contextMenuStrip1
             // 
@@ -167,7 +167,6 @@ namespace WinFormsKnapsack
             Controls.Add(numberOfItems);
             Name = "Knapsack";
             Text = "Knapsack";
-            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -206,12 +205,42 @@ namespace WinFormsKnapsack
 
         private void run_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            List<TextBox> textboxList = new List<TextBox> {numberOfItems, seed, capacity };
+
+            if(IsInputValid(textboxList))
+            {
+                int.TryParse(capacity.Text, out int capacityNumber);
+                int.TryParse(seed.Text, out int seedNumber);
+                int.TryParse(numberOfItems.Text, out int itemsNumber);
+                Problem problem = new Problem(itemsNumber, seedNumber);
+                instance.Text = problem.ToString();
+                Result result = problem.Solve(capacityNumber);
+                results.Text = result.ToString();
+
+            }
+            else
+            {
+                instance.Text = "Invalid input!";
+                results.Text = "Invalid input!";
+            }
+
         }
 
         private void numberOfItemsLabel_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        private bool IsInputValid(List<TextBox> textboxList)
+        {
+            foreach(TextBox textbox in textboxList)
+            {
+                if (textbox.BackColor != Color.LightGreen)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         #endregion

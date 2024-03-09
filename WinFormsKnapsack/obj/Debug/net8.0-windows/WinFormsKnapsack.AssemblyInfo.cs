@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WinFormsKnapsack")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54fa49462ef0097bf65c6763bcdb24055732744f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c25377de9fe668d90ca1317446eb0753a1afec28")]
 [assembly: System.Reflection.AssemblyProductAttribute("WinFormsKnapsack")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WinFormsKnapsack")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

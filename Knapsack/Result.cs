@@ -28,10 +28,10 @@ namespace Knapsack
             {
                 str+= id + " ";
             }
-            str += "\n";
+            str += Environment.NewLine;
 
-            str += "total value: " + this.valueSum + "\n";
-            str += "total weight: " + this.weightSum + "\n";
+            str += "total value: " + this.valueSum + Environment.NewLine;
+            str += "total weight: " + this.weightSum + Environment.NewLine;
             return str;
         }
     }
