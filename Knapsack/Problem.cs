@@ -42,6 +42,12 @@ namespace Knapsack
         public Result Solve(int capacity) 
         {
             Result result = new Result();
+
+            if(capacity <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(capacity), "Invalid capacity");
+            }
+
             items.Sort(compareItems);
             /*foreach(var item in items)
             {

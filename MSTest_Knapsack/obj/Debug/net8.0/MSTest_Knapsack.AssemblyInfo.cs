@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MSTest_Knapsack")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54fa49462ef0097bf65c6763bcdb24055732744f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75ca4444e758306e20345b1d6579d06c795a1e7f")]
 [assembly: System.Reflection.AssemblyProductAttribute("MSTest_Knapsack")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MSTest_Knapsack")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

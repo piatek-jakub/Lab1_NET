@@ -73,6 +73,7 @@ namespace MSTest_Knapsack
                 }
             }
             Result result = problem.Solve(capacity);
+            Debug.WriteLine(result);
             Assert.IsTrue(result.valueSum > referenceResult.valueSum);
         }
 
@@ -114,21 +115,67 @@ namespace MSTest_Knapsack
             Assert.IsFalse(result.listID.Contains(5));
         }
         [TestMethod]
-        public void TestMethod()
+        public void TestMethodFirstElementHighestRatio()
         {
+            float highestRatio = 0.0f;
             int capacity = 10;
             Problem problem = new Problem();
             List<Item> items = new List<Item>();
             items.Add(new Item(7, 4, 0));
-            items.Add(new Item(7, 7, 1));
-            items.Add(new Item(7, 3, 2));
+            items.Add(new Item(6, 7, 1));
+            items.Add(new Item(9, 3, 2));
+            items.Add(new Item(7, 5, 3));
+            items.Add(new Item(10, 1, 4));
 
             problem.AddItemsManually(items);
 
             Result result = problem.Solve(capacity);
+            for(int i = 0; i < problem.items.Count; i++)
+            {
+                if(problem.items[i].ratio > highestRatio)
+                {
+                    highestRatio = problem.items[i].ratio;
+                }
+            }
 
-            Assert.IsTrue(result.listID.Count >= 1);
-            Assert.IsTrue(!result.listID.Contains(7));
+            Assert.IsTrue(highestRatio == problem.items[0].ratio);
+        }
+        [TestMethod]
+        public void TestMethodNumberOfItems()
+        {
+            Problem problem = new Problem();
+            int capacity = 30;
+            List<Item> items = new List<Item>();
+            items.Add(new Item(7, 4, 0));
+            items.Add(new Item(6, 7, 1));
+            items.Add(new Item(3, 9, 2));
+            items.Add(new Item(7, 5, 3));
+            items.Add(new Item(3, 4, 4));
+            items.Add(new Item(1, 8, 5));
+            items.Add(new Item(9, 5, 6));
+
+            problem.AddItemsManually(items);
+
+
+            Result result = problem.Solve(capacity);
+
+            Assert.IsTrue(result.listID.Count == 5);
+        }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException), "Invalid capacity")]
+        public void TestMethodCapacityException()
+        {
+            Problem problem = new Problem();
+            int capacity = -5;
+            List<Item> items = new List<Item>();
+            items.Add(new Item(7, 4, 0));
+            items.Add(new Item(6, 7, 1));
+            items.Add(new Item(3, 9, 2));
+
+            problem.AddItemsManually(items);
+
+
+            Result result = problem.Solve(capacity);
         }
     }
 }

@@ -109,7 +109,6 @@ namespace WinFormsKnapsack
             numberOfItemsLabel.Size = new Size(95, 15);
             numberOfItemsLabel.TabIndex = 7;
             numberOfItemsLabel.Text = "number of items";
-            numberOfItemsLabel.Click += numberOfItemsLabel_Click;
             // 
             // seedLabel
             // 
@@ -153,6 +152,7 @@ namespace WinFormsKnapsack
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources._01c3b8afed8bdc805b49340f076bcba4;
             ClientSize = new Size(584, 561);
             Controls.Add(instanceLabel);
             Controls.Add(resultsLabel);
@@ -193,16 +193,6 @@ namespace WinFormsKnapsack
             }
         }
 
-        private void results_TextChanged(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void instance_TextChanged(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         private void run_Click(object sender, EventArgs e)
         {
             List<TextBox> textboxList = new List<TextBox> {numberOfItems, seed, capacity };
@@ -226,10 +216,6 @@ namespace WinFormsKnapsack
 
         }
 
-        private void numberOfItemsLabel_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         private bool IsInputValid(List<TextBox> textboxList)
         {

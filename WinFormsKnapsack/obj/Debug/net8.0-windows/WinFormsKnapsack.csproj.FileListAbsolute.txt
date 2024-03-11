@@ -22,3 +22,4 @@ C:\Users\Jakub\source\repos\Knapsack\Lab1_NET\WinFormsKnapsack\obj\Debug\net8.0-
 C:\Users\Jakub\source\repos\Knapsack\Lab1_NET\WinFormsKnapsack\obj\Debug\net8.0-windows\WinFormsKnapsack.pdb
 C:\Users\Jakub\source\repos\Knapsack\Lab1_NET\WinFormsKnapsack\obj\Debug\net8.0-windows\WinFormsKnapsack.genruntimeconfig.cache
 C:\Users\Jakub\source\repos\Knapsack\Lab1_NET\WinFormsKnapsack\obj\Debug\net8.0-windows\ref\WinFormsKnapsack.dll
+C:\Users\Jakub\source\repos\Knapsack\Lab1_NET\WinFormsKnapsack\obj\Debug\net8.0-windows\WinFormsKnapsack.Properties.Resources.resources
