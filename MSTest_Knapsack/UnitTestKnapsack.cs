@@ -177,5 +177,33 @@ namespace MSTest_Knapsack
 
             Result result = problem.Solve(capacity);
         }
+
+        [TestMethod]
+        public void TestMethodSorting()
+        {
+            Problem problem = new Problem();
+            Problem reversedProblem = new Problem();
+            int capacity = 12;
+            List<Item> items = new List<Item>();
+            items.Add(new Item(7, 4, 0));
+            items.Add(new Item(6, 7, 1));
+            items.Add(new Item(9, 3, 2));
+            items.Add(new Item(7, 5, 3));
+            items.Add(new Item(10, 1, 4));
+
+            List<Item> reversedItems = items;
+            reversedItems.Reverse();
+
+            problem.AddItemsManually(items);
+            reversedProblem.AddItemsManually(reversedItems);
+
+            Result result = problem.Solve(capacity);
+            Result reversedResult = reversedProblem.Solve(capacity);
+
+            Assert.IsTrue(result.weightSum == reversedResult.weightSum);
+            Assert.IsTrue(result.valueSum == reversedResult.valueSum);
+        }
     }
+
+  
 }
